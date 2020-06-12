@@ -14,17 +14,17 @@ class Card(self, suit, rank):
 		return self.rank + ' of ' + self.suit
 
 class Deck:
-		def __init__(self):
-			self.deck = []
-			for suit in suits:
-				for rank in ranks:
-					self.deck.append(Card(suit, rank))
+	def __init__(self):
+		self.deck = []
+		for suit in suits:
+			for rank in ranks:
+				self.deck.append(Card(suit, rank))
 	
 	def __str__(self):
-	deck_comp = ''
+		deck_comp = ''
 		for card in self.deck:
 			deck_comp += '\n '+card.__str__()
-			return 'The deck has:' + deck_comp
+	return 'The deck has:' + deck_comp
 	
 	def shuffle(self):
 		random.shuffle(self.deck)
@@ -65,7 +65,7 @@ def take_bet:
 	while True:
 		try:
 			chips.bet = int(input('How many chips would you like to bet? '))
-			except ValueError:
+		except ValueError:
 			print('Sorry, a bet must be an integer!')
 		else:
 			if chips.bet > chips.total:
@@ -152,29 +152,29 @@ show_some(player_hand,dealer_hand)
 
     if player_hand.value <= 21:
         
-		while dealer_hand.value < 17:
-			hit(deck,dealer_hand)    
+	while dealer_hand.value < 17:
+		hit(deck,dealer_hand)    
     
-		show_all(player_hand,dealer_hand)
+	show_all(player_hand,dealer_hand)
         
-		if dealer_hand.value > 21:
-			dealer_busts(player_hand,dealer_hand,player_chips)
+	if dealer_hand.value > 21:
+		dealer_busts(player_hand,dealer_hand,player_chips)
 
-		elif dealer_hand.value > player_hand.value:
-			dealer_wins(player_hand,dealer_hand,player_chips)
+	elif dealer_hand.value > player_hand.value:
+		dealer_wins(player_hand,dealer_hand,player_chips)
 
-		elif dealer_hand.value < player_hand.value:
-			player_wins(player_hand,dealer_hand,player_chips)
+	elif dealer_hand.value < player_hand.value:
+		player_wins(player_hand,dealer_hand,player_chips)
 
-		else:
-			push(player_hand,dealer_hand)        
+	else:
+		push(player_hand,dealer_hand)        
      
 	print("\nPlayer's winnings stand at",player_chips.total)
     
 	new_game = input("Would you like to play another hand? Enter 'y' or 'n' ")
     
 	if new_game[0].lower()=='y':
-		playing=True
+		playing = True
 		continue
 	else:
 		print("Thanks for playing!")
